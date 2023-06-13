@@ -1,5 +1,6 @@
 <script>
   import axios from 'axios';
+  import Card from './components/Card.vue';
 
   export default {
     data(){
@@ -16,7 +17,8 @@
     },
     mounted(){
       this.getProjects();
-    }
+    },
+    components: {Card}
   }
 </script>
 
@@ -26,7 +28,7 @@
   <h2>Lista  dei Progetti</h2>
   <ul class="row row-cols-3 g-3">
     <li class="col" v-for="project in projects" :key="project.id">
-      {{ project.title }}
+      <Card :project="project"/>
     </li>
   </ul>
 </div>
