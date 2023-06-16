@@ -23,6 +23,7 @@ export default {
             <p v-if="(project.type)">
                 {{ project.type.name }}
             </p>
+            <router-link :to="{name: 'project', params: {slug: project.slug}}" class="btn btn-primary"> Dettagli</router-link>
         </div>
     </div>
 </template>
